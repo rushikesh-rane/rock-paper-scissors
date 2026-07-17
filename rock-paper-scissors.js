@@ -24,8 +24,12 @@ let intervalId;
 
 function autoPlay() {
 
+  const autoPlayButton =
+    document.querySelector('.auto-play-button');
+
   if (!isAutoPlaying) {
-    intervalId = setInterval (() => {
+
+    intervalId = setInterval(() => {
 
       const playerMove = pickComputerMove();
 
@@ -34,11 +38,17 @@ function autoPlay() {
     }, 1000);
 
     isAutoPlaying = true;
-  } else {
-    clearInterval(intervalId);
-    isAutoPlaying= false;
-  }
 
+    autoPlayButton.innerHTML = 'Stop Auto Play';
+
+  } else {
+
+    clearInterval(intervalId);
+
+    isAutoPlaying = false;
+
+    autoPlayButton.innerHTML = 'Auto Play';
+  }
 
 }
 

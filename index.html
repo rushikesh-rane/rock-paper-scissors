@@ -8,67 +8,55 @@
 </head>
 
 <body>
-  <p class="title">
-    Rock Paper Scissors
-  </p>
 
+  <div class="container">
 
-  <button class="move-button js-rock-button">
+    <p class="title">
+      Rock Paper Scissors
+    </p>
 
-    <img src="img/rock-emoji.png" class="move-icon">
+    <p class="instructions">
+      Press <strong>R</strong>, <strong>P</strong> or <strong>S</strong> to play.
+    </p>
 
-  </button>
+    <button class="move-button js-rock-button">
+      <img src="img/rock-emoji.png" class="move-icon">
+    </button>
 
+    <button class="move-button js-paper-button">
+      <img src="img/paper-emoji.png" class="move-icon">
+    </button>
 
-  <button class="move-button js-paper-button">
-    <img src="img/paper-emoji.png" class="move-icon">
-  </button>
+    <button class="move-button js-scissors-button">
+      <img src="img/scissors-emoji.png" class="move-icon">
+    </button>
 
+    <p class="js-result result"></p>
 
-  <button class="move-button js-scissors-button">
-    <img src="img/scissors-emoji.png" class="move-icon">
-  </button>
+    <p class="js-moves"></p>
 
+    <p class="js-score score"></p>
 
-  <p class="js-result result">
+    <button class="reset-button"
+      onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+      ">
+      Reset Score
+    </button>
 
-  </p>
+    <button class="auto-play-button"
+      onclick="autoPlay();">
+      Auto Play
+    </button>
 
-  <p class="js-moves">
+  </div>
 
+  <script src="rock-paper-scissors.js"></script>
 
-  </p>
-
-
-  <p class="js-score score">
-
-  </p>
-
-  <button class="reset-button" onclick="
-  score.wins=0;
-  score.ties=0;
-  score.losses=0;
-  localStorage.removeItem('score');
-  updateScoreElement();
-  ">
-    Reset Score
-  </button>
-
-  <button class="auto-play-button" onclick="
-  
-  autoPlay();
-  
-  ">
-
-    Auto Play
-
-  </button>
-
-
-
-
-
-  <script src="rock-paper-scissors.js"> </script>
 </body>
 
 </html>
